@@ -1,0 +1,35 @@
+1.Czy jeżeli już wyodrębnię znaki w zakresie każdej z tablic rejestracyjnych to czy mogę użyć
+pytesseract lub easyocr, żeby znaleźć tekst? TAK, MOŻE BYĆ NAWET 4.5
+2.Jak zrobić funkcję, która automatycznie znajdowałaby optymalne ustawienia filtru dwustronnego? (w zależności od jasności obrazka?)
+CHYBA NIE MA SENSU
+3.Czy może zamiast znajdować najbardziej wysunięte punkty maski zrobić bounding rectangle i jego współrzędne po prostu podać?
+JAK NAJBARDZIEJ
+4.Czy przyjęte przeze mnie podejście ze współczynnikami jest odpowiednie?
+JAK NAJBARDZIEJ
+5.Czy mogę wyciąć znalezione tablice i wypisać na konsoli tekst, czy zostawić oryginalne zdjęcie
+i na nim napisać znaki znalezionych tablic rejestracyjnych?
+MOŻNA WYCIĄĆ ZNALEZIONE TABLICE I WYPISAĆ NA KONSOLI TEKST
+6.Jak napisać funkcję, która automatycznie będzie dobierała threshold? (w zależności od jasności obrazka?)
+(żeby już potem na tablicach były tylko litery ładnie)(mean color lub mean intesity?)
+SPRÓBOWAĆ
+7.Czy możliwe jest wybranie tylko takich konturów, które są albo w większości białe albo w większości czarne
+(ich wnętrze) np, BGR = (<20,<20,<20) LUB BGR = (>220,>220,>220) byłoby to ułatwienie (np. mean color lub mean intensity)
+SPRÓBOWAĆ NA SZARYM OBRAZKU
+8.Czy da się w jakiś fajny sposób użyć hierarchi znalezionych konturów - jest to tablica jeżeli w środku są inne kontury?
+SPRÓBOWAĆ
+10.Jak już mi znajdzie mniej więcej kontury to wtedy dodać warunek, że w środku muszą być jeszcze inne kontury(litery)???
+SPRÓBOWAĆ
+
+# hierarchia konturów to dobre podejście
+
+(# zrobić drzewko(jak dwa otwory to 8, jak jeden otwór to coś tam itd.)
+(# będzie ten sam rozmiar tablic rejestracyjnych, więc spróbować z długością i polem)
+# match shapes
+# żeby wypisać litery i cyfry sprawdzać minimalną współrzędną x i zaczamy od najmniejszej do największej
+
+
+# wymiary tablicy rejstracyjnej 520x114 [mm]
+# pole 59280
+# obwod 1268
+# stosunek pola do obwodu 46  (35 - 55) - przy zmianie rozmiaru bezużyteczne
+# stosunek szeroksci do wysokosci 4,5  (3,5 - 5,5) - w miarę skuteczny przy zmianie rozmiarów
